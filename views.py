@@ -1,11 +1,22 @@
 from main import app
-
-from flask import render_template
+from flask import render_template, request
+from models import Produto, Insumos
+from calculator import *
 
 #rotas
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    produto = None
+    insumos = []
+
+    if request.method=='GET':
+        nome = request.args.get("produto")
+        if nome:
+            produto = Produto.query.filter_by(item=nome).first()
+            if produto:
+                insumos = produto.insumos
+
+    return render_template("index.html", produto=produto, insumos=insumos)
 
 @app.route("/signin")
 def sign_in():
@@ -15,6 +26,19 @@ def sign_in():
 def sign_up():
     return render_template("signup.html")
 
-@app.route("/results")
+@app.route("/results", methods=["POST"])
 def results():
-    return render_template("results.html")    
+    calc = Calculator()
+    resu, total = calc.calculator(request.form)
+    return render_template("results.html", resultados =resu, total=total)    
+
+# @app.route("/teste")
+# def teste():
+#     garrafa = Produto.query.filter_by(item="Garrafa de Vidro").first()
+#     if garrafa:
+#         for i in garrafa.insumos:
+#             print(i.insumo, i.unidade, i.UEV)
+#         return "Insumos impressos no console."
+#     else:
+#         print("Produto não encontrado.")
+#         return "Produto não encontrado."

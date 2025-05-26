@@ -7,6 +7,43 @@
         <title>Aplicação de Cálculo de Emergia</title>
     </head>
     <body>
-        <h1>HOME</h1>
+ <form method="GET">
+    <label>O que deseja calcular?</label>
+    <input type="text" name="produto" placeholder="Ex: Garrafa de Vidro">
+    <button type="submit">Buscar</button>
+    </form>
+
+    {% if produto %}
+    <h2>Produto: {{ produto.item }}</h2>
+
+    {% if insumos %}
+        <form method="POST" action="/results">
+        <input type="hidden" name="produto_id" value="{{ produto.id }}">
+        <table border="1">
+            <tr>
+            <th>Insumo</th>
+            <th>Unidade</th>
+            <th>UEV</th>
+            <th>Quantidade</th>
+            </tr>
+            {% for i in insumos %}
+            <tr>
+                <td>{{ i.insumo }}</td>
+                <td>{{ i.unidade }}</td>
+                <td>{{ "%.2e"|format(i.UEV) }}</td>
+                <td><input type="number" step="any" name="qtd_{{ i.id }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit">Calcular</button>
+        </form>
+    {% else %}
+        <p>Nenhum insumo cadastrado para esse produto.</p>
+    {% endif %}
+
+    {% elif request.args.get('produto') %}
+    <p>Produto não encontrado.</p>
+    {% endif %}
+
     </body>
 </html>

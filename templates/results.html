@@ -5,8 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
         <title>Aplicação de Cálculo de Emergia</title>
-    </head>
-    <body>
-        <h1>RESULTS</h1>
-    </body>
+   </head>
+<body>
+    <h1>Resultado da Emergia</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>UEV</th>
+            <th>Emergia (sej)</th>
+        </tr>
+        {% for r in resultados %}
+        <tr>
+            <td>{{ r.item }}</td>
+            <td>{{ r.qtd }}</td>
+            <td>{{ "{:.2e}".format(r.UEV) }}</td>
+            <td>{{ "{:.2e}".format(r.emergia) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Total de Emergia: {{ "{:.2e}".format(total) }} sej</h2>
+</body>
 </html>
