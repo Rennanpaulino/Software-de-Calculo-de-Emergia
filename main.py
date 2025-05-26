@@ -1,7 +1,8 @@
-import sqlite3
-from flask import Flask, request
+from flask import Flask
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 from views import *
 
