@@ -23,14 +23,12 @@
             <tr>
             <th>Insumo</th>
             <th>Unidade</th>
-            <th>UEV</th>
             <th>Quantidade</th>
             </tr>
             {% for i in insumos %}
             <tr>
                 <td>{{ i.insumo }}</td>
                 <td>{{ i.unidade }}</td>
-                <td>{{ "%.2e"|format(i.UEV) }}</td>
                 <td><input type="number" step="any" name="qtd_{{ i.id }}"></td>
             </tr>
             {% endfor %}

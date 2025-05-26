@@ -29,8 +29,8 @@ def sign_up():
 @app.route("/results", methods=["POST"])
 def results():
     calc = Calculator()
-    resu, total = calc.calculator(request.form)
-    return render_template("results.html", resultados =resu, total=total)    
+    resultados, total = calc.calculator(request.form)
+    return render_template("results.html", resultados=resultados, total=total)   
 
 # @app.route("/teste")
 # def teste():
