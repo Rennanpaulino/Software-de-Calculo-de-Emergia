@@ -1,10 +1,10 @@
-from main import app, bcrypt
+from main import app, db
 from flask import render_template, request, redirect, url_for, flash, session
-from models import Produto, Insumos, User, db
+from models import Produto, Insumos, User
 from calculator import Calculator
 
 #rotas
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/home", methods=['GET', 'POST'])
 def index():
     produto = None
     insumos = []
@@ -31,13 +31,14 @@ def sign_up():
         
         novo_usuario = User(nome=nome, email=email)
         novo_usuario.setSenha(senha)
+        db.session.add(novo_usuario)
         db.session.commit()
         flash("Usuário criado")
         return redirect (url_for("sign_in"))
 
     return render_template("signup.html")
 
-@app.route("/signin", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def sign_in():
     if request.method=='POST':
         email=request.form["email"]

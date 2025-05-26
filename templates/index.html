@@ -18,7 +18,7 @@
 
     {% if insumos %}
         <form method="POST" action="/results">
-        <input type="hidden" name="produto_id" value="{{ produto.id }}">
+        <label>Insumos utilizados para:</label><input type="hidden" name="produto_id" value="{{ produto.id }}">
         <table border="1">
             <tr>
             <th>Insumo</th>
@@ -29,7 +29,7 @@
             <tr>
                 <td>{{ i.insumo }}</td>
                 <td>{{ i.unidade }}</td>
-                <td><input type="number" step="any" name="qtd_{{ i.id }}"></td>
+                <td><input type="number" step="any" name="qtd_{{ i.id }}" min="0" required></td>
             </tr>
             {% endfor %}
         </table>

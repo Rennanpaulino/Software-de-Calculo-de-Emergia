@@ -1,11 +1,8 @@
-from main import app
+from main import app,db
 import sqlite3
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from flask_bcrypt import generate_password_hash, check_password_hash
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lci.db'
-db = SQLAlchemy(app)
 
 produto_insumo = db.Table('produto_insumo',
     db.Column('produto_id', db.Integer, db.ForeignKey('produto.id'), primary_key=True),
@@ -39,4 +36,4 @@ class User(db.Model):
         self.senha_hash = generate_password_hash(senha).decode('utf-8')
 
     def verifySenha(self,senha):
-        return check_password_hash(self.senha_hash,)
+        return check_password_hash(self.senha_hash, senha)
