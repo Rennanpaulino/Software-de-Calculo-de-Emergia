@@ -29,5 +29,19 @@
     <li>ELR: {{ indices.ELR }}</li>
     <li>ESI: {{ indices.ESI }}</li>
 </ul>
+
+<a href="{{ url_for('download_xlsx') }}">Baixar Resultados em Excel</a> <a href="{{ url_for('download_json') }}">Baixar Resultados em JSON</a>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
 </body>
 </html>

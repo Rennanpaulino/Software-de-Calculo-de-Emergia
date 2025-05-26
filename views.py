@@ -1,7 +1,8 @@
 from main import app, db
-from flask import render_template, request, redirect, url_for, flash, session
+from flask import render_template, request, redirect, url_for, flash, session, send_file
 from models import Produto, Insumos, User
 from calculator import Calculator
+import pandas as pd
 
 #rotas
 @app.route("/home", methods=['GET', 'POST'])
@@ -59,4 +60,20 @@ def sign_in():
 def results():
     calc = Calculator()
     resultados, total, indices = calc.calculator(request.form)
+
+    df = pd.DataFrame(resultados)
+    df["indice_emergético"] = indices
+    df["total_emergia"]=total
+
+    df.to_excel("static/resultados.xlsx", index=False)
+    df.to_json("static/resultados.json", orient="records", indent=4)
+
     return render_template("results.html", resultados=resultados, total=total, indices=indices)   
+
+@app.route("/download-excel")
+def download_xlsx():
+    return send_file("static/resultados.xlsx", as_attachment=True)
+
+@app.route("/download-json")
+def download_json():
+    return send_file("static/resultados.json", as_attachment=True)
