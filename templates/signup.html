@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="ptbr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
-        <title>Aplicação de Cálculo de Emergia</title>
-    </head>
-    <body>
-        <h1>CRIE SUA CONTA</h1>
-        <form method="POST">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
-        {% with messages = get_flashed_messages() %}
-  {% if messages %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
+  <title>Aplicação de Cálculo de Emergia</title>
+</head>
+
+<div class="login.container">
+  <body>
+    <h1>CRIE SUA CONTA</h1>
+    <form method="POST">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
     <ul class="flashes">
       {% for message in messages %}
-        <li>{{ message }}</li>
+      <li>{{ message }}</li>
       {% endfor %}
     </ul>
-  {% endif %}
-{% endwith %}
+    {% endif %}
+    {% endwith %}
+  </body>
+</div>
 
-    </body>
 </html>

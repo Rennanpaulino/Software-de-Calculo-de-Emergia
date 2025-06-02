@@ -1,6 +1,6 @@
 from main import app, db
 from flask import render_template, request, redirect, url_for, flash, session, send_file
-from models import Produto, Insumos, User
+from models import Produto, User
 from calculator import Calculator
 import pandas as pd
 

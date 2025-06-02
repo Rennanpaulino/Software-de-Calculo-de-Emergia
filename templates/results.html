@@ -6,8 +6,10 @@
         <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
         <title>Aplicação de Cálculo de Emergia</title>
    </head>
+   <div class="resultados.container"></div>
 <body>
-    <h1>Resultado da Emergia</h1>
+    <div class="resultado.container"><h1>Resultado da Emergia</h1></div>
+    <div class="tabela.container">
     <table>
         <tr>
             <th>Item</th>
@@ -22,6 +24,7 @@
         </tr>
         {% endfor %}
     </table>
+  </div>
     <h4>Total de Emergia: {{ total }} sej</h4>
     <h3>Índices de Sustentabilidade</h3>
 <ul>
@@ -44,4 +47,5 @@
 
 
 </body>
+</div>
 </html>

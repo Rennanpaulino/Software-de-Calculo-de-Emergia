@@ -1,0 +1,51 @@
+[
+    {
+        "item":"Areia Silica",
+        "qtd":0.9,
+        "emergia":37800000000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"Calc\u00e1rio (CaCO2)",
+        "qtd":0.2,
+        "emergia":196200000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"Barrilha (Na2CO3)",
+        "qtd":0.1,
+        "emergia":810000000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"Eletricidade",
+        "qtd":5.0,
+        "emergia":7500000000000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"G\u00e1s Natural",
+        "qtd":15.0,
+        "emergia":652500000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"Transporte Rodovi\u00e1rio",
+        "qtd":0.02,
+        "emergia":20000000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    },
+    {
+        "item":"M\u00e3o de Obra",
+        "qtd":0.005,
+        "emergia":600000000000000.0,
+        "indice_emerg\u00e9tico":null,
+        "total_emergia":8139478700000000.0
+    }
+]
