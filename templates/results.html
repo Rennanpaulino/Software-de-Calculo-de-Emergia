@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="ptbr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
-        <title>Aplicação de Cálculo de Emergia</title>
-   </head>
-   <div class="resultados.container"></div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet.css" media="screen">
+  <title>Aplicação de Cálculo de Emergia</title>
+</head>
+
 <body>
-    <div class="resultado.container"><h1>Resultado da Emergia</h1></div>
-    <div class="tabela.container">
-    <table>
+  <div id="container">
+    <div id="titulo">
+      <h1>Resultado da Emergia</h1>
+    </div>
+
+    <div id="tabela">
+      <table>
         <tr>
-            <th>Item</th>
-            <th>Quantidade</th>
-            <th>Emergia (sej)</th>
+          <th>Item</th>
+          <th>Quantidade</th>
+          <th>Emergia (sej)</th>
         </tr>
         {% for r in resultados %}
         <tr>
-            <td>{{ r.item }}</td>
-            <td>{{ r.qtd }}</td>
-            <td>{{ r.emergia }}</td>
+          <td>{{ r.item }}</td>
+          <td>{{ r.qtd }}</td>
+          <td>{{ r.emergia }}</td>
         </tr>
         {% endfor %}
-    </table>
-  </div>
-    <h4>Total de Emergia: {{ total }} sej</h4>
-    <h3>Índices de Sustentabilidade</h3>
-<ul>
-    <li>EYR: {{ indices.EYR }}</li>
-    <li>ELR: {{ indices.ELR }}</li>
-    <li>ESI: {{ indices.ESI }}</li>
-</ul>
-
-<a href="{{ url_for('download_xlsx') }}">Baixar Resultados em Excel</a> <a href="{{ url_for('download_json') }}">Baixar Resultados em JSON</a>
-
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
+      </table>
+    </div>
+    <div id="indice">
+      <h4>Total de Emergia: {{ total }} sej</h4>
+      <h3>Índices de Sustentabilidade</h3>
+      <ul class="lista-estilizada">
+        <li>EYR: {{ indices.EYR }}</li>
+        <li>ELR: {{ indices.ELR }}</li>
+        <li>ESI: {{ indices.ESI }}</li>
+      </ul>
+    </div>
+    <footer class="center-footer">
+      <a href="{{ url_for('download_xlsx') }}" class="btn">Baixar Resultados em Excel</a>
+      <a href="{{ url_for('download_json') }}" class="btn"> Baixar Resultados em JSON</a>
+    </footer>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
     <ul class="flashes">
       {% for message in messages %}
-        <li>{{ message }}</li>
+      <li>{{ message }}</li>
       {% endfor %}
     </ul>
-  {% endif %}
-{% endwith %}
+    {% endif %}
+    {% endwith %}
 
-
+  </div>
 </body>
-</div>
+
 </html>

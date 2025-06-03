@@ -4,48 +4,48 @@
         "qtd":0.9,
         "emergia":37800000000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"Calc\u00e1rio (CaCO2)",
-        "qtd":0.2,
-        "emergia":196200000000.0,
+        "qtd":0.1,
+        "emergia":98100000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"Barrilha (Na2CO3)",
-        "qtd":0.1,
-        "emergia":810000000000.0,
+        "qtd":0.5,
+        "emergia":4050000000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"Eletricidade",
-        "qtd":5.0,
-        "emergia":7500000000000000.0,
+        "qtd":15.0,
+        "emergia":2.25e+16,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"G\u00e1s Natural",
-        "qtd":15.0,
-        "emergia":652500000000.0,
+        "qtd":5.0,
+        "emergia":217500000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"Transporte Rodovi\u00e1rio",
         "qtd":0.02,
         "emergia":20000000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     },
     {
         "item":"M\u00e3o de Obra",
-        "qtd":0.005,
-        "emergia":600000000000000.0,
+        "qtd":0.05,
+        "emergia":6000000000000000.0,
         "indice_emerg\u00e9tico":null,
-        "total_emergia":8139478700000000.0
+        "total_emergia":2.85421856e+16
     }
 ]
