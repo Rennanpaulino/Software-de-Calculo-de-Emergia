@@ -9,17 +9,17 @@
 </head>
 
 <body>
-  <div class="index.container">
+  <div class="container">
     <form method="GET">
-      <div class="container">
+      <div class="container-busca">
         <label>O que deseja calcular?</label>
-        <input type="text" name="produto" placeholder="Ex: Garrafa de Vidro">
-        <button type="submit">Buscar</button>
+        <input type="text" name="produto" placeholder="Ex: Garrafa de Vidro" class="campo-busca">
+        <button class="botao-busca">Buscar</button>
+      </div>
     </form>
-
+    
     {% if produto %}
     <h2>Produto: {{ produto.item }}</h2>
-
     {% if insumos %}
     <form method="POST" action="/results">
       <label>Insumos utilizados para:</label><input type="hidden" name="produto_id" value="{{ produto.id }}">
@@ -39,7 +39,7 @@
           {% endfor %}
         </table>
       </div>
-      <button type="submit">Calcular</button>
+      <button class="botao-calcular">Calcular</button>
     </form>
     {% else %}
     <p>Nenhum insumo cadastrado para esse produto.</p>

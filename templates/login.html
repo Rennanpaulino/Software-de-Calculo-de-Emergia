@@ -17,7 +17,7 @@
             <button type="submit">Entrar</button>
         </form>
         <br>
-        <a href="{{ url_for('sign_up') }}"><button>Cadastrar-se</button></a>
+        <a href="{{ url_for('sign_up') }}" class="btn-secondary">Cadastrar-se</a>
 
         {% with messages = get_flashed_messages() %}
         {% if messages %}
