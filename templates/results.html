@@ -10,11 +10,8 @@
 
 <body>
   <div id="container">
-    <div id="titulo">
       <h1>Resultado da Emergia</h1>
-    </div>
 
-    <div id="tabela">
       <table>
         <tr>
           <th>Item</th>
@@ -29,8 +26,7 @@
         </tr>
         {% endfor %}
       </table>
-    </div>
-    <div id="indice">
+
       <h4>Total de Emergia: {{ total }} sej</h4>
       <h3>Índices de Sustentabilidade</h3>
       <ul class="lista-estilizada">
@@ -38,7 +34,7 @@
         <li>ELR: {{ indices.ELR }}</li>
         <li>ESI: {{ indices.ESI }}</li>
       </ul>
-    </div>
+
     <footer class="center-footer">
       <a href="{{ url_for('download_xlsx') }}" class="btn">Baixar Resultados em Excel</a>
       <a href="{{ url_for('download_json') }}" class="btn"> Baixar Resultados em JSON</a>
@@ -52,8 +48,8 @@
     </ul>
     {% endif %}
     {% endwith %}
-
   </div>
+
 </body>
 
 </html>
